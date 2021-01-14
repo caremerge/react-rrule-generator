@@ -79,7 +79,6 @@ const Repeat = ({
           weekly={weekly}
           handleChange={handleChange}
           translations={translations}
-          options={options}
         />
       }
       {
