@@ -54,7 +54,7 @@ const EndOnDate = ({
                 readOnly: true,
               }
             }
-            locale={translateLabel(translations, 'locale')}
+            locale="en-us"
             timeFormat={false}
             viewMode="days"
             closeOnSelect

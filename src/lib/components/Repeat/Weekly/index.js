@@ -12,12 +12,13 @@ const RepeatWeekly = ({
     options,
   },
   handleChange,
-  translations
+  translations,
 }) => {
   let daysArray = toPairs(days);
-  if (options.weekStartsOnSunday) {
-    daysArray = daysArray.slice(-1).concat(daysArray.slice(0, -1));
-  }
+  // if (options.weekStartsOnSunday) {
+  // hack to always display SUN-SAT regardless of WKST
+  daysArray = daysArray.slice(-1).concat(daysArray.slice(0, -1));
+  // }
 
   return (
     <div className="px-3">
