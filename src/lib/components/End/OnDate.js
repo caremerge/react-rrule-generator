@@ -18,7 +18,7 @@ const EndOnDate = ({
 }) => {
   const CustomCalendar = options.calendarComponent;
 
-  const locale = options.weekStartsOnSunday ? 'en-ca' : 'en-gb';
+  const locale = 'en-us';
   const calendarAttributes = {
     'aria-label': translateLabel(translations, 'end.tooltip'),
     value: date,
@@ -26,7 +26,6 @@ const EndOnDate = ({
     locale,
     readOnly: true,
   };
-
   return (
     <div className="col-6 col-sm-3">
       {
