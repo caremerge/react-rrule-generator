@@ -133,7 +133,9 @@ ReactRRuleGenerator.propTypes = {
 ReactRRuleGenerator.defaultProps = {
   id: null,
   value: '',
-  config: {},
+  config: {
+    weekStartsOnSunday: true
+  },
   onChange() {},
   calendarComponent: null,
   translations: translations.english,
