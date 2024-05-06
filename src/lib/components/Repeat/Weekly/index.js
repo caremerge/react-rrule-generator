@@ -13,6 +13,7 @@ const RepeatWeekly = ({
   },
   handleChange,
   translations,
+  disabled,
 }) => {
   let daysArray = toPairs(days);
   // if (options.weekStartsOnSunday) {
@@ -34,6 +35,7 @@ const RepeatWeekly = ({
             className="form-control"
             value={interval}
             onChange={numericalFieldHandler(handleChange)}
+            disabled={disabled}
           />
         </div>
         <div className="col-sm-2">
@@ -55,6 +57,7 @@ const RepeatWeekly = ({
                 name={`repeat.weekly.days[${dayName}]`}
                 className="form-control"
                 checked={isDayActive}
+                disabled={disabled}
                 onChange={(event) => {
                   const editedEvent = {
                     ...event,

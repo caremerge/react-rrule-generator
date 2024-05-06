@@ -10,7 +10,8 @@ const RepeatMonthlyOnThe = ({
   onThe,
   hasMoreModes,
   handleChange,
-  translations
+  translations,
+  disabled,
 }) => {
   const isActive = mode === 'on the';
 
@@ -26,6 +27,7 @@ const RepeatMonthlyOnThe = ({
             value="on the"
             checked={isActive}
             onChange={handleChange}
+            disabled={disabled}
           />
         )}
       </div>
@@ -40,7 +42,7 @@ const RepeatMonthlyOnThe = ({
           aria-label="Repeat monthly on the which"
           className="form-control"
           value={onThe.which}
-          disabled={!isActive}
+          disabled={!isActive || disabled}
           onChange={handleChange}
         >
           <option value="First">{translateLabel(translations, 'numerals.first')}</option>
@@ -58,7 +60,7 @@ const RepeatMonthlyOnThe = ({
           aria-label="Repeat monthly on the day"
           className="form-control"
           value={onThe.day}
-          disabled={!isActive}
+          disabled={!isActive || disabled}
           onChange={handleChange}
         >
           {DAYS.map(day => <option key={day} value={day}>{translateLabel(translations, `days.${day.toLowerCase()}`)}</option>)}

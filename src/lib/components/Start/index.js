@@ -10,7 +10,8 @@ const Start = ({
     onDate,
   },
   handleChange,
-  translations
+  translations,
+  disabled,
 }) => (
   <div className="px-3">
     <div className="form-group row">
@@ -24,7 +25,7 @@ const Start = ({
           </strong>
         </label>
       </div>
-      <StartOnDate id={id} onDate={onDate} handleChange={handleChange} translations={translations} />
+      <StartOnDate id={id} onDate={onDate} handleChange={handleChange} translations={translations} disabled={disabled} />
     </div>
   </div>
 );

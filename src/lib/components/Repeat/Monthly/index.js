@@ -15,7 +15,8 @@ const RepeatMonthly = ({
     options,
   },
   handleChange,
-  translations
+  translations,
+  disabled
 }) => {
   const isTheOnlyOneMode = option => options.modes === option;
   const isOptionAvailable = option => !options.modes || isTheOnlyOneMode(option);
@@ -34,6 +35,7 @@ const RepeatMonthly = ({
             className="form-control"
             value={interval}
             onChange={numericalFieldHandler(handleChange)}
+            disabled={disabled}
           />
         </div>
         <div className="col-sm-2">
@@ -49,6 +51,7 @@ const RepeatMonthly = ({
           hasMoreModes={!isTheOnlyOneMode('on')}
           handleChange={handleChange}
           translations={translations}
+          disabled={disabled}
         />
       )}
       {isOptionAvailable('on the') && (
@@ -59,6 +62,7 @@ const RepeatMonthly = ({
           hasMoreModes={!isTheOnlyOneMode('on the')}
           handleChange={handleChange}
           translations={translations}
+          disabled={disabled}
         />
       )}
 

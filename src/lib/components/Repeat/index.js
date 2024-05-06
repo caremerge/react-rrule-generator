@@ -19,7 +19,8 @@ const Repeat = ({
     options,
   },
   handleChange,
-  translations
+  translations,
+  disabled
 }) => {
   const isOptionAvailable = option => !options.frequency || options.frequency.indexOf(option) !== -1;
   const isOptionSelected = option => frequency === option;
@@ -44,6 +45,7 @@ const Repeat = ({
             className="form-control"
             value={frequency}
             onChange={handleChange}
+            disabled={disabled}
           >
             {isOptionAvailable('Hourly') && <option value="Hourly">{translateLabel(translations, 'repeat.hourly.label')}</option>}
             {isOptionAvailable('Daily') && <option value="Daily">{translateLabel(translations, 'repeat.daily.label')}</option>}
@@ -61,6 +63,7 @@ const Repeat = ({
           yearly={yearly}
           handleChange={handleChange}
           translations={translations}
+          disabled={disabled}
         />
       }
       {
@@ -70,6 +73,7 @@ const Repeat = ({
           monthly={monthly}
           handleChange={handleChange}
           translations={translations}
+          disabled={disabled}
         />
       }
       {
@@ -79,6 +83,7 @@ const Repeat = ({
           weekly={weekly}
           handleChange={handleChange}
           translations={translations}
+          disabled={disabled}
         />
       }
       {
@@ -88,6 +93,7 @@ const Repeat = ({
           daily={daily}
           handleChange={handleChange}
           translations={translations}
+          disabled={disabled}
         />
       }
       {
@@ -97,6 +103,7 @@ const Repeat = ({
           hourly={hourly}
           handleChange={handleChange}
           translations={translations}
+          disabled={disabled}
         />
       }
 
