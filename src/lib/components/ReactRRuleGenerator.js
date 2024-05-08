@@ -18,6 +18,7 @@ class ReactRRuleGenerator extends PureComponent {
     this.props.config,
     this.props.calendarComponent,
     this.props.id,
+    this.props.disabled,
   );
 
   componentWillMount() {
@@ -59,7 +60,7 @@ class ReactRRuleGenerator extends PureComponent {
   render() {
     const {
       id,
-      data: { start, repeat, end, options, error },
+      data: { start, repeat, end, options, error }
     } = this.state;
 
     return (
@@ -80,6 +81,7 @@ class ReactRRuleGenerator extends PureComponent {
                 start={start}
                 handleChange={this.handleChange}
                 translations={this.props.translations}
+                disabled={this.props.disabled}
               />
               <hr />
             </div>
@@ -91,6 +93,7 @@ class ReactRRuleGenerator extends PureComponent {
               repeat={repeat}
               handleChange={this.handleChange}
               translations={this.props.translations}
+              disabled={this.props.disabled}
             />
           </div>
 
@@ -102,6 +105,7 @@ class ReactRRuleGenerator extends PureComponent {
                 end={end}
                 handleChange={this.handleChange}
                 translations={this.props.translations}
+                disabled={this.props.disabled}
               />
             </div>
           )}
@@ -129,6 +133,7 @@ ReactRRuleGenerator.propTypes = {
   onChange: PropTypes.func,
   calendarComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   translations: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+  disabled: PropTypes.bool
 };
 ReactRRuleGenerator.defaultProps = {
   id: null,
@@ -139,6 +144,7 @@ ReactRRuleGenerator.defaultProps = {
   onChange() {},
   calendarComponent: null,
   translations: translations.english,
+  disabled: false,
 };
 
 export default ReactRRuleGenerator;

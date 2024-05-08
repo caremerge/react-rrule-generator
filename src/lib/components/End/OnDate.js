@@ -14,10 +14,10 @@ const EndOnDate = ({
     options,
   },
   handleChange,
-  translations
+  translations,
+  disabled,
 }) => {
-  const CustomCalendar = options.calendarComponent;
-
+  const CustomCalendar = options.calendarComponent;  
   const locale = 'en-us';
   const calendarAttributes = {
     'aria-label': translateLabel(translations, 'end.tooltip'),
@@ -26,6 +26,15 @@ const EndOnDate = ({
     locale,
     readOnly: true,
   };
+  let inputAttributes = {
+    id: `${id}-datetime`,
+      name: 'end.onDate.date',
+      readOnly: true,     
+  };
+  if (disabled) {
+    inputAttributes = {...inputAttributes, disabled }
+  }
+  
   return (
     <div className="col-6 col-sm-3">
       {
@@ -46,13 +55,7 @@ const EndOnDate = ({
           />
           : <DateTime
             {...calendarAttributes}
-            inputProps={
-              {
-                id: `${id}-datetime`,
-                name: 'end.onDate.date',
-                readOnly: true,
-              }
-            }
+            inputProps={inputAttributes}
             locale="en-us"
             timeFormat={false}
             viewMode="days"

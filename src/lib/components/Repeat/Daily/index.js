@@ -9,7 +9,8 @@ const RepeatDaily = ({
     interval = 1,
   },
   handleChange,
-  translations
+  translations,
+  disabled
 }) => (
   <div className="form-group row d-flex align-items-sm-center">
     <div className="col-sm-2 offset-sm-1">
@@ -23,6 +24,7 @@ const RepeatDaily = ({
         className="form-control"
         value={interval}
         onChange={numericalFieldHandler(handleChange)}
+        disabled={disabled}
       />
     </div>
     <div className="col-sm-2">
