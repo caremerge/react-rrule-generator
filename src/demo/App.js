@@ -31,7 +31,7 @@ class App extends Component {
   };
 
   handleChangeDisabled = (event) => {    
-    const hasDisabled = event.target.value;
+    const hasDisabled = event.target.checked;
     this.setState({ disabled: hasDisabled });
   };
 
@@ -143,18 +143,7 @@ class App extends Component {
                 name="rrule-disabled"
                 className="form-control"
                 checked={this.state.disabled}
-                onChange={(event) => {
-                  const editedEvent = {
-                    ...event,
-                    target: {
-                      ...event.target,
-                      value: !this.state.disabled,
-                      name: event.target.name,
-                    },
-                  };
-
-                  this.handleChangeDisabled(editedEvent);
-                }}
+                onChange={this.handleChangeDisabled}
               />
               </div>
             </div>

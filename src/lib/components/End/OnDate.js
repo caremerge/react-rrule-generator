@@ -31,14 +31,10 @@ const EndOnDate = ({
       name: 'end.onDate.date',
       readOnly: true,     
   };
-  if(disabled){
-    inputAttributes = {
-      id: `${id}-datetime`,
-        name: 'end.onDate.date',
-        readOnly: true,     
-        disabled: true,
-    };
+  if (disabled) {
+    inputAttributes = {...inputAttributes, disabled }
   }
+  
   return (
     <div className="col-6 col-sm-3">
       {
